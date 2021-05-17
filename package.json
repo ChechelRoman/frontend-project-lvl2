@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "description": "[![Actions Status](https://github.com/ChechelRoman/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/ChechelRoman/frontend-project-lvl2/actions)",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,8 @@
     "gendiff": "bin/gendiff.js"
   },
   "dependencies": {
-    "commander": "^7.2.0"
+    "commander": "^7.2.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^7.26.0",
