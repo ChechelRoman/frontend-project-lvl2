@@ -7,18 +7,46 @@ const buildDiff = (file1, file2) => {
     const value1 = file1[key];
     const value2 = file2[key];
     if (!_.has(file1, key)) {
-      return `  + ${key}: ${value2}`;
+      return {
+        key,
+        value: value2,
+        type: 'added',
+      };
     }
-    if (!_.has(file2, key)) {
-      return `  - ${key}: ${value1}`;
-    }
-    if (_.get(file1, key) === _.get(file2, key)) {
-      return [`    ${key}: ${value1}`];
-    }
-    return `  - ${key}: ${value1}\n  + ${key}: ${value2}`;
-  }).flat(2);
 
-  return `{\n${result.join('\n')}\n}`;
+    if (!_.has(file2, key)) {
+      return {
+        key,
+        value: value1,
+        type: 'removed',
+      };
+    }
+
+    if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
+      return {
+        key,
+        children: buildDiff(value1, value2),
+        type: 'nested',
+      };
+    }
+
+    if (_.get(file1, key) === _.get(file2, key)) {
+      return {
+        key,
+        value: value2,
+        type: 'unchanged',
+      };
+    }
+
+    return {
+      key,
+      preValue: value1,
+      curValue: value2,
+      type: 'changed',
+    };
+  });
+
+  return result;
 };
 
-export default buildDiff;
+export default (file1, file2) => ({ type: 'root', children: buildDiff(file1, file2) });
