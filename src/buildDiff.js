@@ -9,16 +9,16 @@ const buildDiff = (file1, file2) => {
     if (!_.has(file1, key)) {
       return {
         key,
-        value: value2,
         type: 'added',
+        value: value2,
       };
     }
 
     if (!_.has(file2, key)) {
       return {
         key,
-        value: value1,
         type: 'removed',
+        value: value1,
       };
     }
 
@@ -33,16 +33,16 @@ const buildDiff = (file1, file2) => {
     if (_.get(file1, key) === _.get(file2, key)) {
       return {
         key,
-        value: value2,
         type: 'unchanged',
+        value: value2,
       };
     }
 
     return {
       key,
+      type: 'changed',
       preValue: value1,
       curValue: value2,
-      type: 'changed',
     };
   });
 
