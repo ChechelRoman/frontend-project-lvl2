@@ -6,7 +6,7 @@
 
 ### About
 
-This package contains an utility that generates difference between two files (JSON, YAML, YML)
+This package contains ac cli utility that generates difference between two files (JSON, YAML, YML)
 
 ### Setup
 
