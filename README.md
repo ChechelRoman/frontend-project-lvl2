@@ -10,7 +10,7 @@ This package contains an utility that generates difference between two files (JS
 
 ### Setup
 
-$ make install
+```$ make install```
 
 ### Run tests
 
