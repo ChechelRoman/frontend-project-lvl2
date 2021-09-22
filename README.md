@@ -10,38 +10,52 @@ This package contains an utility that generates difference between two files (JS
 
 ### Setup
 
-```$ make install```
+```
+$ make install
+```
 
 ### Run tests
 
+```
 $ make test
+```
 
 ### JSON gendiff showcase
 
+```
 $ gendiff filePath1.json filePath2.json
+```
 
 [![asciicast](https://asciinema.org/a/wawnTT44dBPxdc5IxnGgaK6RB.svg)](https://asciinema.org/a/wawnTT44dBPxdc5IxnGgaK6RB)
 
 ### YAML/YML gendiff showcase
 
+```
 $ gendiff filePath1.ymal filePath2.yml
+```
 
 [![asciicast](https://asciinema.org/a/UeK45VxjVzxR6vxNjgEg9jcNV.svg)](https://asciinema.org/a/UeK45VxjVzxR6vxNjgEg9jcNV)
 
 ### Stylish format gendiff showcase
 
+```
 $ gendiff filePath1.json filePath2.json
+```
 
 [![asciicast](https://asciinema.org/a/415016.svg)](https://asciinema.org/a/415016)
 
 ### Plain format gendiff showcase
 
+```
 $ gendiff --format plain filePath1.json filePath2.json
+```
 
 [![asciicast](https://asciinema.org/a/415238.svg)](https://asciinema.org/a/415238)
 
 ### JSON format gendiff showcase
 
+```
 $ gendiff -f filePath1.json filePath2.json
+```
 
 [![asciicast](https://asciinema.org/a/415239.svg)](https://asciinema.org/a/415239)
